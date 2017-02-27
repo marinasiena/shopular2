@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en" ng-app='shopulars'>
+
+<head>
+  <title></title>
+  <meta name="viewport" content="width=device-width" initial-scale="1">
+  <link href="https://fonts.googleapis.com/css?family=Carrois+Gothic:100,400,700|Carrois+Gothic+SC:100,400,700&effect=decaying" rel="stylesheet">
+  <link rel=stylesheet type="text/css" href="./lib/styles/main.css">
+</head>
+
+<body>
+
+  <div class='page-wrapper'>
+
+    <header>
+
+      <h1 class='font-effect-decaying'>Shopular</h1>
+      <h2>Inventory</h2>
+
+      <div class='user-info' ng-controller='UserController as userCtrl'>
+
+        <div ng-show='userCtrl.isIn().username'>
+          <h3>User loggedin: {{userCtrl.isIn().username}}</h3>
+          <h3>Date &amp; time loggedin: {{userCtrl.isIn().time | date: 'MMM d HH:mm a'}}</h3>
+        </div>
+
+        <section class='login-section'>
+          <h3>User Login</h3>
+          <form id='login-form' type='submit' ng-submit='userCtrl.currLogin(loginForm.username.$viewValue, loginForm.password.$viewValue)' name='loginForm' novalidate>
+            <input type='text' name='username' placeholder='username' ng-model='loginCtrl.login.username' />
+            <input type='password' name='password' placeholder='password' ng-model='loginCtrl.login.password' />
+            <button class='login-btn' ng-disabled='loginForm.$invalid' name='loginBtn'>login</button>
+          </form>
+        </section>
+
+      </div>
+
+    </header>
+
+    <main>
+
+      <div ng-controller='ItemsController as itemsCtrl' ng-show='itemsCtrl.isLoggedIn()'>
+
+        <section class='item-form-section'>
+
+          <h3>New Item Input</h3>
+
+          <form id='item-form' name='newItemForm' ng-submit='itemsCtrl.addItem(newItemForm.name.$viewValue, newItemForm.price.$viewValue, newItemForm.quantity.$viewValue, newItemForm.color.$viewValue, newItemForm.discount.$viewValue)' novalidate>
+            <input ng-model='itemsCtrl.newItemObj.name' class='ng-invalid' type='text' name='name' placeholder='name' required/>
+            <input ng-model='itemsCtrl.newItemObj.price' class='ng-invalid' type='number' name='price' placeholder='price' required/>
+            <input ng-model='itemsCtrl.newItemObj.quantity' class='ng-invalid' type='number' name='quantity' placeholder='quantity' required/>
+            <input ng-model='itemsCtrl.newItemObj.color' class='ng-invalid' type='text' name='color' placeholder='color' required/>
+            <input ng-model='itemsCtrl.newItemObj.discount' class='discount' type='number' name='discount' placeholder='discount' />
+            <button class='new-item-btn' ng-disabled='newItemForm.$invalid' name='new-item-btn'>enter new item</button>
+          </form>
+
+        </section>
+
+        <section class='all-items-wrapper'>
+
+          <table class='items'>
+            <tr class='table-heading'>
+              <th ng-click="itemsCtrl.changeSort('name')">Name</th>
+              <th ng-click="itemsCtrl.changeSort('price')">Price</th>
+              <th ng-click="itemsCtrl.changeSort('discount')">Has Discount</th>
+              <th ng-click="itemsCtrl.changeSort('quantity')">Quantity</th>
+              <th ng-click="itemsCtrl.changeSort('color')">Color</th>
+            </tr>
+            <tr class='table-row' ng-repeat='item in itemsCtrl.items | orderBy:itemsCtrl.sort.column:itemsCtrl.sort.descending'>
+              <td class='name'>{{item.name}}</td>
+              <td class='align-right'>{{item.price | currency}}</td>
+              <td><img ng-show='item.discount' ng-src='{{itemsCtrl.img}}'></td>
+              <td class='quantity'>{{item.quantity}}</td>
+              <td class='color'>{{item.color}}</td>
+            </tr>
+            </li>
+          </table>
+
+        </section>
+      </div>
+
+    </main>
+
+  </div>
+
+  <script src="./src/js/vendor/angular.min.js"></script>
+  <script src="./src/js/vendor/angular-ui-router.min.js"></script>
+  <script src='./src/js/vendor/angular-local-storage.min.js'></script>
+  <script src="./src/js/vendor/jquery-3.1.1.min.js"></script>
+  <script type="text/javascript" src="./src/js/main.js"></script>
+  <script type="text/javascript" src="./src/js/ShopularService.js"></script>
+  <script type='text/javascript' src='./src/js/controllers/items-controller.js'></script>
+  <script type='text/javascript' src='./src/js/controllers/user-controller.js'></script>
+  <script type="text/javascript" src="./src/js/local-storage-service.js"></script>
+  <script type="text/javascript" src="./src/js/user-service.js"></script>
+</body>
+</html>

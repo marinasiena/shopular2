@@ -1,0 +1,101 @@
+@import 'partials/reset';
+@import 'partials/styling';
+
+body {
+    background: $bgcolor;
+    font: 16px/1.6 $Carrois;
+    text-align: center;
+}
+
+h1 {
+    font: 700 4rem/1 $CarroisSC;
+}
+
+h2 {
+    font: 700 3.5rem/1 $CarroisSC;
+    color: $mdgreen;
+}
+
+h3 {
+    font: 700 1rem/1 $CarroisSC;
+    color: $mdgreen;
+}
+
+table,
+td,
+th {
+    color: $dkgreen;
+    border: 1px solid $mdgreen;
+    font: 400 1rem/1 $Carrois;
+    margin: 0 auto;
+    max-width: 1050px;
+    text-align: left;
+}
+
+table {
+    margin-top: 20px;
+    width: 60%;
+
+    & img {
+        width: 25px;
+    }
+}
+
+th {
+    color: white;
+}
+
+td,
+th {
+    text-align: center;
+}
+
+.item-form-section {
+    background-color: $mdgreen;
+    margin: 20px auto;
+    width: 60%;
+
+    & h3 {
+        font: 100 1rem $CarroisSC;
+        color: white;
+    }
+
+    & button {
+        background-color: $bgcolor;
+        border: none;
+        color: gray;
+        font: 100 1rem $CarroisSC;
+        margin: 20px;
+
+        &:hover {
+            background-color: white;
+            color: black;
+        }
+    }
+}
+
+.login-section {
+    @extend .item-form-section;
+
+    & #login-form {
+        padding-bottom: 10px;
+    }
+}
+
+input.ng-invalid {
+    background-color: rgb(251,208,218);
+}
+
+.table-heading th {
+    background-color: $mdgreen;
+    font: 700 1rem/1 $CarroisSC;
+}
+
+.align-right {
+    text-align: right;
+}
+
+.name {
+    padding-left: 10px;
+    text-align: left;
+}

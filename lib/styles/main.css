@@ -1,0 +1,138 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+*, *:before, *:after {
+  box-sizing: border-box; }
+
+button:focus, textarea:focus {
+  outline: none; }
+
+img {
+  max-width: 100%;
+  width: 100%; }
+
+.float-left {
+  float: left; }
+
+.float-right {
+  float: right; }
+
+.float-clear {
+  clear: both; }
+
+body {
+  background: #cfe0cb;
+  font: 16px/1.6 "Carrois Gothic", sans-serif;
+  text-align: center; }
+
+h1 {
+  font: 700 4rem/1 "Carrois Gothic SC", sans-serif; }
+
+h2 {
+  font: 700 3.5rem/1 "Carrois Gothic SC", sans-serif;
+  color: #99ba91; }
+
+h3 {
+  font: 700 1rem/1 "Carrois Gothic SC", sans-serif;
+  color: #99ba91; }
+
+table,
+td,
+th {
+  color: #5d675a;
+  border: 1px solid #99ba91;
+  font: 400 1rem/1 "Carrois Gothic", sans-serif;
+  margin: 0 auto;
+  max-width: 1050px;
+  text-align: left; }
+
+table {
+  margin-top: 20px;
+  width: 60%; }
+  table img {
+    width: 25px; }
+
+th {
+  color: white; }
+
+td,
+th {
+  text-align: center; }
+
+.item-form-section, .login-section {
+  background-color: #99ba91;
+  margin: 20px auto;
+  width: 60%; }
+  .item-form-section h3, .login-section h3 {
+    font: 100 1rem "Carrois Gothic SC", sans-serif;
+    color: white; }
+  .item-form-section button, .login-section button {
+    background-color: #cfe0cb;
+    border: none;
+    color: gray;
+    font: 100 1rem "Carrois Gothic SC", sans-serif;
+    margin: 20px; }
+    .item-form-section button:hover, .login-section button:hover {
+      background-color: white;
+      color: black; }
+
+.login-section #login-form {
+  padding-bottom: 10px; }
+
+input.ng-invalid {
+  background-color: #fbd0da; }
+
+.table-heading th {
+  background-color: #99ba91;
+  font: 700 1rem/1 "Carrois Gothic SC", sans-serif; }
+
+.align-right {
+  text-align: right; }
+
+.name {
+  padding-left: 10px;
+  text-align: left; }
